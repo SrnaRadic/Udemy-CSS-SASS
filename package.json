@@ -1,0 +1,25 @@
+{
+  "name": "udemy",
+  "version": "1.0.0",
+  "description": "landing page for first project on udemy sass kurs",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss main.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SrnaRadic/Udemy-CSS-SASS.git"
+  },
+  "author": "Srna Radic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SrnaRadic/Udemy-CSS-SASS/issues"
+  },
+  "homepage": "https://github.com/SrnaRadic/Udemy-CSS-SASS#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.10.0"
+  }
+}
