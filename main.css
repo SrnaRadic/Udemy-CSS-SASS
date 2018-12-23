@@ -38,7 +38,7 @@ body {
     text-align: center; }
 
 .heading-primary {
-  color: blue;
+  color: #fff;
   text-transform: uppercase;
   margin-bottom: 6rem;
   backface-visibility: hidden;
@@ -109,10 +109,10 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
-  background-color: blue;
+  background-color: #fff;
   color: #777; }
   .btn--white::after {
-    background-color: blue; }
+    background-color: #fff; }
 
 .btn::after {
   content: "";
