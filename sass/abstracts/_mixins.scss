@@ -1,0 +1,8 @@
+@mixin clearfix {
+    &::after {
+        content: " "; // we always need to specify content property, otherwise  pseude element will not appear on the page, we make it empty because we don't want to see it
+        display: table; // we need to display it. "Table" is used in standard version of clearfix
+        clear: both; // this is the property that actually performs float clears
+
+    }
+}

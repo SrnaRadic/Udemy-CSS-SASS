@@ -1,0 +1,5 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding:  25rem 0;
+    margin-top: -20vh //visina prve sekcije je 95vh, a poligon ide do 75vh, zato moramo ovu sledecu sekciju da pomerimo na gore za 20vh da bi se boja lepo uklapala
+}
