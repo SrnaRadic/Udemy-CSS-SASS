@@ -7,7 +7,7 @@
 
     @include clearfix; 
 
-    [class^="col-"] {
+    [class^="col-"] { //ovde biramo klase koje pocinju sa "col-", postoje selektori koji biraju kraj ili da klasa npr uopste sadrzi "col-"
         float: left;
 
         &:not(:last-child) {
