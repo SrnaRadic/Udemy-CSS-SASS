@@ -9,7 +9,13 @@
     background-image: linear-gradient(
         to right,
         rgba($color-primary-light, 0.8),
-        rgba($color-primary-dark, 0.8)), 
-        url(img/nat-4.jpg);
+        rgba($color-primary-dark, 0.8)),
+        url(../img/nat-4.jpg);
     background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    & > * { // ovo bira svu direktnu decu .section-features klase tj samo klasu .row
+        transform: skewY(7deg);
+    }
 }
