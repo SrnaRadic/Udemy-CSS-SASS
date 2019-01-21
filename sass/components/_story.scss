@@ -2,14 +2,66 @@
     width: 75%;
     margin: 0 auto;
     box-shadow: 0 3rem 6rem rgba($color-black, .1);
-    background-color: $color-white;
-    border-radius: 3rem;
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
     font-size: $main-font-size;
+    transform: skewX(-12deg);
+
+    & > * {
+        transform: skewX(12deg); // Currently it is not possible to have more than one transform property on one element so we need to add this manually to all the children below.
+    }
 
     &__shape {
         width: 15rem;
         height: 15rem;
         float: left;
-        background-color: red;
+        -webkit-shape-outside: circle(50% at 50% 50%); // defines where the content flows around the element
+        shape-outside: circle(50% at 50% 50%); // in order for this to work element must be floated
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%); // If we want element to look like that circle above in shape outside we have to give to clip path the same properties
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative; //so the story__caption can be positioned absolute in relation to this element
     }
+
+    &__img {
+        height: 100%; //(100% width of the parent which is 15rem)
+        transform: translateX(-4rem) scale(1.4);
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        opacity: 0;
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        transition: all .5s;
+        backface-visibility: hidden; //when element moves a little bit to the right, this makes this behaviour disappear
+    }
+
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+        -webkit-filter: blur(3px) brightness(80%);;
+
+    }
+
 }
