@@ -567,7 +567,8 @@ body {
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
-  z-index: 1000; }
+  z-index: 1000;
+  transition: transform .8s; }
 
 .navigation__nav {
   height: 100vh;
@@ -576,7 +577,8 @@ body {
   right: 0;
   z-index: 1500;
   opacity: 0;
-  width: 0; }
+  width: 0;
+  transition: opacity .8s; }
 
 .navigation__list {
   position: absolute;
@@ -611,6 +613,10 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80); }
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%; }
 
 .section-about {
   background-color: #f7f7f7;

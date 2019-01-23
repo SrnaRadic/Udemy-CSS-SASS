@@ -24,6 +24,7 @@
         top: 6.5rem;
         right: 6.5rem;
         z-index: 1000;
+        transition: transform .8s; // this makes navigation background (green) appear gradualy on the full screen
         //transform: scale(80);
     }
 
@@ -35,6 +36,7 @@
         z-index: 1500;
         opacity: 0; // if we put only opacity 0 links will still be there and we will be able to click on it
         width: 0; //so we need to make the width of this element 0 as well.
+        transition: opacity .8s; // this makes navigation itself appear gradualy
 
     }
 
@@ -83,6 +85,12 @@
     &__checkbox:checked ~ &__background { //when the checkbox is checked pick sibling with the class navigation__background and add these styles
         transform: scale(80);
     }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
+    }
+
 
 
 }
