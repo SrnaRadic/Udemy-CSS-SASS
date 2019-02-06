@@ -24,7 +24,7 @@
         top: 6.5rem;
         right: 6.5rem;
         z-index: 1000;
-        transition: transform .8s; // this makes navigation background (green) appear gradualy on the full screen
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1); // this makes navigation background (green) appear gradualy on the full screen
         //transform: scale(80);
     }
 
@@ -32,11 +32,11 @@
         height: 100vh;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         z-index: 1500;
         opacity: 0; // if we put only opacity 0 links will still be there and we will be able to click on it
         width: 0; //so we need to make the width of this element 0 as well.
-        transition: opacity .8s; // this makes navigation itself appear gradualy
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55); // this makes navigation itself appear gradualy
 
     }
 
@@ -47,6 +47,7 @@
         transform: translate(-50%, -50%);
         list-style: none;
         text-align: center;
+        width: 100%; 
     }
 
     &__item {
