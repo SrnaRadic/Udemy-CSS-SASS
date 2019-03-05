@@ -6,6 +6,9 @@
     top: 0;
     left: 0;
     z-index: 9000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
 
     &__content {
         position: absolute;
@@ -18,6 +21,9 @@
         display: table;
         border-radius: 3px;
         overflow: hidden;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .4s .2s; // .2s is a delay after which transition starts
     }
 
     &__left {
@@ -50,6 +56,33 @@
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto; // if the word is not finished it is put sign "-" and word goes into the next line
+    }
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__content { // when the element becomes a target we style the popup__content
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
     }
 
     

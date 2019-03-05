@@ -6,3 +6,30 @@
 
     }
 }
+
+//media query manager
+
+/*
+0 - 600px               Phone
+600-900px               Tablet portrait mode
+900px - 1200px          Tablet landscape mode
+1200-1800               is where our normal styles apply
+1800px +                Big desktop screens
+*/
+
+@mixin respond-phone {
+    @media (max-width: 600px) {
+        @content
+    };
+}
+
+/*Breakpoint argument choices:
+-phone
+-tab-port (tablet portrait)
+-tab-land (tablet landscape)
+- big-desktop
+*/
+
+@mixin respond($breakpoint) {
+
+}
