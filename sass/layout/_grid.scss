@@ -3,6 +3,15 @@
     margin: 0 auto; // centring block elements inside other block elements
     &:not(:last-child) {   // umesto da izabere samo last child ovaj selektor bira sve sem last childa
         margin-bottom: $gutter-vertical;
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+
+
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 
     @include clearfix; 
@@ -12,6 +21,15 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
 
